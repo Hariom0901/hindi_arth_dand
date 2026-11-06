@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171717">
+    <title>Hindi Artha Danda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <p class="eyebrow">COLLEGE GAME</p>
+        <h1>Hindi Artha Danda</h1>
+    </div>
+    <span class="fine-badge">₹5 per Hindi word</span>
+</header>
+
+<main class="container">
+    <section class="panel" id="room-panel">
+        <h2>Your room</h2>
+        <p class="muted">Create a room or join an existing room with its code.</p>
+
+        <form id="create-room-form" class="form-row">
+            <input id="room-name" type="text" placeholder="Room name (e.g. College Friends)" required maxlength="100">
+            <button type="submit">Create room</button>
+        </form>
+
+        <div class="divider"><span>OR JOIN A ROOM</span></div>
+
+        <form id="join-room-form" class="form-row">
+            <input id="join-code" type="text" placeholder="Room code" required>
+            <input id="member-name" type="text" placeholder="Your name" required maxlength="100">
+            <button type="submit">Join room</button>
+        </form>
+
+        <div id="room-message" class="message" role="status"></div>
+    </section>
+
+    <section class="panel hidden" id="active-room">
+        <div class="room-heading">
+            <div>
+                <p class="eyebrow">CURRENT ROOM</p>
+                <h2 id="active-room-name">Room</h2>
+            </div>
+            <div class="room-code">
+                <span>ROOM CODE</span>
+                <strong id="active-room-code"></strong>
+                <button type="button" class="secondary" id="copy-code">Copy code</button>
+            </div>
+        </div>
+
+        <div class="form-row add-member-row">
+            <input id="new-member-name" type="text" placeholder="Add another member" maxlength="100">
+            <button type="button" id="add-member">Add member</button>
+        </div>
+        <div id="member-message" class="message" role="status"></div>
+    </section>
+
+    <section class="panel hidden" id="members-panel">
+        <div class="section-heading">
+            <div>
+                <h2>Members</h2>
+                <p class="muted">Record fines and payments for each member.</p>
+            </div>
+            <button type="button" class="secondary" id="refresh-members">Refresh</button>
+        </div>
+        <div id="members-list" class="members-list"></div>
+    </section>
+
+    <section class="panel hidden" id="history-panel">
+        <div class="section-heading">
+            <div>
+                <h2>Transaction history</h2>
+                <p class="muted" id="history-member-name">Select a member to view their history.</p>
+            </div>
+        </div>
+        <div id="history-list" class="history-list"></div>
+    </section>
+
+    <p class="footer-note">Track fairly. Pay honestly. Keep the banter friendly.</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
